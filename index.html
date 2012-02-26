@@ -5,12 +5,7 @@
         <style>
             .somewrapper {
                 text-align: center;
-                display: inline-block;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                margin-left: -250px;
-                margin-top: -200px;
+                margin: 50px 0 50px 0;
             }
 
             img {
@@ -18,9 +13,9 @@
             }
 
             body, html {
-                height: 100%;
                 padding: 0;
                 margin: 0;
+                text-align: center;
             }
 
         </style>
@@ -29,6 +24,22 @@
         <div class="somewrapper">
             <img src="http://geniusbeauty.com/wp-content/uploads/2008/10/seascale-colorful-sunset-sky.jpg" />
         </div>
-        <script id="ambilight-script" rel=".somewrapper img" src="./ambilight-image.js"></script>
+
+        <div class="somewrapper">
+            <img src="http://media.smashingmagazine.com/images/nature-wallpapers/3.jpg" />
+        </div>
+
+        <div class="somewrapper">
+            <img src="http://media.smashingmagazine.com/images/nature-wallpapers/11.jpg" />
+        </div>
+
+        <div class="somewrapper">
+            <img src="http://media.smashingmagazine.com/images/nature-wallpapers/18.jpg" />
+        </div>
+
+        <script id="ambilight-script"
+                data-mask="./img/mask.png"
+                data-selector=".somewrapper img"
+                src="./ambilight-image.js"></script>
     </body>
 </html>

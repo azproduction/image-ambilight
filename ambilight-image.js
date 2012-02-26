@@ -1,6 +1,8 @@
-(function (maskImage){
+(function (){
     if ("\v" == "v") return;
-    function makeLight(target) {
+    var mask = document.getElementById('ambilight-script').getAttribute('data-mask');
+
+    function makeLight(target, maskImage) {
         var paletWidth = 1;
         var paletHeight = 8;
         var abmiWidth = target.width + 400;
@@ -37,27 +39,28 @@
 
             ctx2.drawImage(this, 0, 0, 250, 700, 0, 0, 250, abmiHeight);
             ctx2.drawImage(this, 250, 0, 250, 700, abmiWidth - 250, 0, 250, abmiHeight);
-        }
+        };
 
-        targetParent.onmouseover = function() {
+        targetParent.addEventListener('mouseover', function () {
             targetCanvas.style.display = "";
-        }
-        targetParent.onmouseout = function() {
+        }, false);
+
+        targetParent.addEventListener('mouseout', function() {
             targetCanvas.style.display = "none";
-        }
+        }, false);
 
         img.src = maskImage;
     }
         
-    var images = document.querySelectorAll(document.getElementById('ambilight-script').getAttribute('rel'));
+    var images = document.querySelectorAll(document.getElementById('ambilight-script').getAttribute('data-selector'));
 
     for (var i = 0; i< images.length; i++) {
         var tmpImage = new Image();
         tmpImage.onload = (function(element){
             return function () {
-                makeLight(element);
+                makeLight(element, mask);
             }
         })(images[i]);
         tmpImage.src = images[i].getAttribute('src');
     }
-})('./img/mask.png');
+}());
