@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Image Ambilight example</title>
+        <style>
+            .somewrapper {
+                text-align: center;
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-left: -250px;
+                margin-top: -200px;
+            }
+
+            img {
+                outline: solid 10px #222;
+            }
+
+            body, html {
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="somewrapper">
+            <img src="http://geniusbeauty.com/wp-content/uploads/2008/10/seascale-colorful-sunset-sky.jpg" />
+        </div>
+        <script id="ambilight-script" rel=".somewrapper img" src="./ambilight-image.js"></script>
+    </body>
+</html>
